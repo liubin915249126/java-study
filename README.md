@@ -186,3 +186,81 @@ import 引用
 
    }
 ```
+#### 方法重写
+返回值类型，方法名，参数类型及个数都要与父类继承的方法相同
+优先调用子类方法
+#### 继承初始化顺序
+构造方法：父类-->子类
+属性：初始化对象的属性-->构造方法中的初始化
+#### final 关键字使用
+最终，不可继承，不可覆盖，不可修改(不会自动初始化)，只能赋值一次(常量)
+修饰类，方法，属性，变量
+#### super 关键字
+代表父类对象(访问属性，方法)
+super.eat()
+super.age
+子类实例化默认执行父类构造方法(无参构造方法)
+super();
+
+#### Object 类
+所有默认继承子Object
+```java
+   toString(); //返回对象哈希code码(重写:返回对象属性)
+   equals(); //比较两个对象的引用是否指向同一块内存地址(==)比较内存地址
+   @Override
+   public boolean equals(Object obj){
+       if(this == obj)
+           return true;
+       if(obj == null)
+           return false
+       if(getClass()!=obj.getClass())
+           return false;
+       Dog other = (Dog) obj; //传进来的对象转换为dog类型
+       if(age !=  other.age)
+           return false;
+        return true;           
+   }
+```
+### 多态
+对象具有多种形态
+```java
+   // 引用的多态
+   Animal obj1 = new Animal();
+   Animal obj2 = new Dog(); //父类的引用可以指向子类对象(反之不可)
+   // 方法多态
+      //本类方法
+      // 子类重写的方法或继承的方法(子类独有的方法不能继承)
+```
+#### 引用类型转换
+```java
+    向上类型转换(隐式/自动类型转换)
+    向下类型转换(强制类型转换)
+    Dog dog = new Dog();
+    Animal animal = dog; // 向上
+    Dog dog2 = (Dog)animal; // 向下，强制类型转换
+    Cat cat = (Cat)animal; // 编译时 Cat类型，运行时 Dog类型 
+    
+    if(animal instanceof Cat){  //instanceof //某个引用是否是某个类型或其子类
+       Cat cat = (Cat)animal;
+    }else{
+
+    }
+```
+#### java 抽象类
+abstract //修饰符
+
+#### java 中的接口
+规范，约束类
+```java
+   public abstract interface IPlayGame{
+    public abstract void playGame();
+   }
+   public class SmartPhone extends Telphone implements IPlayGame{
+    @Override
+    public void playGame(){
+        
+    };
+   }
+   IPlayGame ip1 = new SmartPhone();
+   IPlayGame ip2 = new Psp();
+```
