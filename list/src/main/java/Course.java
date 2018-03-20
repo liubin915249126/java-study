@@ -7,6 +7,9 @@ public class Course {
         this.name = name;
         this.id= id;
     }
+    public Course(){
+
+    }
 }
 
 
