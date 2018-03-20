@@ -43,8 +43,17 @@
 ```
 
 ## set 集 HashSet 无序不可重复
+多次添加某个对象只保留第一次添加的
 ```java
    public Set<Course>course = new HashSet<Course>();
    add // student.courses.add(cr);
    iterator ,foreach // 循环，不能使用get    
+```
+
+## map HashMap
+
+```java
+   // key,value任意类型
+   // key不能重复，value可以
+   // map 支持范型 Map<k,v>   
 ```
