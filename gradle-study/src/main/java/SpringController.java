@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 //表明这是一个 Controller
 @Controller
 
-//RestController是一种Rest风格的Controller，可以直接返回对象而不返回视图，返回的对象可以使JSON，XML等
+//RestController是一种Rest风格的Controller，可以直接返回对象而不返回视图，返回的对象可以是JSON，XML等
 //@RestController
 
 //使用自动配置，主动添加并解析bean，配置文件等信息
