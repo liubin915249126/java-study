@@ -41,3 +41,15 @@
     notifyAll 唤醒在该对象上等待的所有线程。
     toString 转换成字符串，一般子类都有重写，否则打印句柄。
 ```
+#### String、StringBuffer与StringBuilder的区别
+>
+  1.首先说运行速度，或者说是执行速度，在这方面运行速度快慢为：StringBuilder > StringBuffer > String
+　 　String最慢的原因：
+　　 String为字符串常量，而StringBuilder和StringBuffer均为字符串变量，即String对象一旦创建之后该对象是不可更改的，但后两者的对象是变量，是可以更改的
+  2.在线程安全上，StringBuilder是线程不安全的，而StringBuffer是线程安全的(StringBuffer中很多方法可以带有synchronized关键字，所以可以保证线程是安全的)
+  3.String：适用于少量的字符串操作的情况
+　　StringBuilder：适用于单线程下在字符缓冲区进行大量操作的情况
+　　StringBuffer：适用多线程下在字符缓冲区进行大量操作的情况
+
+  
+>
