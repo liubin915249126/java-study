@@ -6,8 +6,11 @@ import java.util.Scanner;
 public class SetTest{
    public List<Course> courseToSelect;
 
+   private Scanner console;
+
    public SetTest(){
        this.courseToSelect = new ArrayList<Course>();
+       this.console = new Scanner(System.in);
    }
     public void add(){
         Course cr1 = new Course("1","数据结构");
@@ -26,6 +29,11 @@ public class SetTest{
             Course cr = (Course) obj;
             System.out.println(cr.id);
         }
+    }
+    // contains 包含
+    public void contains(){
+        Course course = courseToSelect.get(0);
+        System.out.println(courseToSelect.contains(course));
     }
     public static void main(String[] args){
        SetTest st = new SetTest();

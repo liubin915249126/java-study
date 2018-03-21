@@ -39,7 +39,7 @@
 ```java
    // 集合可以是任意类型的对象(对象的引用) 如果把某个对象放入集合，则会忽略他的类型，当作Object处理
    // 范型则是规定集合只能存放特定类型的对象(及其子类型) 编译期间进行检查 不用强制转换 (范型只能是包装类型)
-   public List<Course> courses;
+   public List<Course> courses = new ArrayList<Course>();
 ```
 
 ## set 集 HashSet 无序不可重复
@@ -50,10 +50,35 @@
    iterator ,foreach // 循环，不能使用get    
 ```
 
-## map HashMap
+## Map HashMap
 
 ```java
    // key,value任意类型
    // key不能重复，value可以
    // map 支持范型 Map<k,v>   
+```
+#### 判断序列是否包含某个元素
+```java
+   set.contains(course) //boolen // HashSet 先判断hashCode --> eqauls
+   // set.containsAll(course) //boolen
+```
+#### list indexOf 获取第一次索引位置
+```java
+   lastIndexOf 获取最后一次索引位置
+```
+#### 判断Map中是否包含某个key/value值
+```java
+   containsKey(); //boolen
+   containsValue(); //boolen 重写equals方法判断某个字段是否相同
+```
+#### List 排序
+```java
+   // java.utils.collections
+   // 包装类/String
+   Collections.sort(integerList); // 排序 0-9 A-Z a-z;
+   // 其他类:Student
+   Comparable     接口 //默认比较规则
+   CompareTo(o)   方法 // 重写排序规则 
+   Comparator     接口 // 临时比较规则
+   Compara(o1,o2) 方法
 ```

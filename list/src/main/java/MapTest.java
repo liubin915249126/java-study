@@ -87,7 +87,9 @@ public class MapTest {
           System.out.println("值："+entry.getValue().name);
       }
     }
+    public void contains(){
 
+    }
     public static void main(String[] args){
         MapTest mt =new MapTest();
         mt.put();

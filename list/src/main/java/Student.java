@@ -1,7 +1,7 @@
 import java.util.HashSet;
 import java.util.Set;
 
-public class Student {
+public class Student implements Comparable<Student>{
     public String name;
     public String id;
     public Set<Course> courses; //
@@ -11,5 +11,9 @@ public class Student {
         this.name = name;
         this.id= id;
         this.courses = new HashSet<Course>(); //
+    }
+    @Override
+    public int CompareTo(Student o){
+        return this.id.compareTo(o.id);
     }
 }
