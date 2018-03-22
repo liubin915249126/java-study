@@ -50,6 +50,45 @@
   3.String：适用于少量的字符串操作的情况
 　　StringBuilder：适用于单线程下在字符缓冲区进行大量操作的情况
 　　StringBuffer：适用多线程下在字符缓冲区进行大量操作的情况
-
-  
 >
+#### HashMap和HashTable的区别
+
+#### HashMap的Hashcode的作用
+```java
+   如果x.equals(y)返回“true”，那么x和y的hashCode()必须相等。
+   如果x.equals(y)返回“false”，那么x和y的hashCode()有可能相等，也有可能不等。
+   如果x,y的hashCode()不相等,x.equals(y)返回“false”一定返回false。
+```
+#### 为什么重载hashCode方法
+```java
+   Object 的 equals() 方法是比较两个对象的内存地址是否相等(==) 
+```
+#### 为什么HashMap是线程不安全的
+```java
+   多线程同时put产生hash碰撞，其中一个被覆盖
+   扩容时只有一个生效，其他线程数据丢失
+   多线程环境中，使用HashMap进行put操作时会引起死循环
+    //Hashtable
+    Map<String, String> hashtable = new Hashtable<>();
+    //synchronizedMap
+    Map<String, String> synchronizedHashMap = Collections.synchronizedMap(new HashMap<String, String>());
+    //ConcurrentHashMap
+    Map<String, String> concurrentHashMap = new ConcurrentHashMap<>();
+```
+#### try?catch?finally，try里有return，finally还执行么
+>
+  会执行，在方法return动作之前，return语句执行之后，若finally中再有return语句，则此方法以finally的return作为最终返回，若finally中无return语句，则此方法以try的return作为最终返回。
+>
+#### Override和Overload的含义去区别
+```java
+   如果在子类中定义某方法与其父类有相同的名称和参数，我们说该方法被重写 (Overriding)。如果在一个类中定义了多个同名的方法，它们或有不同的参数个数或有不同的参数类型或有不同的参数次序，则称为方法的重载(Overloading)。
+```
+#### ArrayList、LinkedList、Vector的区别
+```java
+   Arraylist和Vector是采用数组方式存储数据，此数组元素数大于实际存储的数据以便增加插入元素，都允许直接序号索引元素，但是插入数据要涉及到数组元素移动等内存操作，所以插入数据慢，查找有下标，所以查询数据快，Vector由于使用了synchronized方法-线程安全，所以性能上比ArrayList要差，LinkedList使用双向链表实现存储，按序号索引数据需要进行向前或向后遍历，但是插入数据时只需要记录本项前后项即可，插入数据较快。
+```
+#### foreach与正常for循环效率对比
+```java
+   需要循环数组结构的数据时，建议使用普通for循环，因为for循环采用下标访问，对于数组结构的数据来说，采用下标访问比较好。(ArrayList)
+   需要循环链表结构的数据时，一定不要使用普通for循环，这种做法很糟糕，数据量大的时候有可能会导致系统崩溃。(LinkList)
+```

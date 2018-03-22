@@ -509,24 +509,6 @@
               <item name="list" type="b2602c69:ProjectViewProjectNode" />
               <item name="list" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
-            <path>
-              <item name="list" type="b2602c69:ProjectViewProjectNode" />
-              <item name="list" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="list" type="b2602c69:ProjectViewProjectNode" />
-              <item name="list" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="list" type="b2602c69:ProjectViewProjectNode" />
-              <item name="list" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -743,12 +725,12 @@
       <workItem from="1521528264699" duration="252000" />
       <workItem from="1521528544872" duration="771000" />
       <workItem from="1521530622592" duration="16773000" />
-      <workItem from="1521605039795" duration="2171000" />
+      <workItem from="1521605039795" duration="3870000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23292000" />
+    <option name="totallyTimeSpent" value="24991000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
