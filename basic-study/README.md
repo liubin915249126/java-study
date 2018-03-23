@@ -81,7 +81,7 @@ Java方法定义
          // 手动装箱
 		Double b =  new   Double(a);    
         // 自动装箱
-		Double c =    a   ;
+		Double c =    a   ;(Integer i = Integer.valueOf(100);)
         System.out.println("装箱后的结果为：" + b + "和" + c);
         // 定义一个Double包装类对象，值为8
 		Double d = new Double(87.0);
