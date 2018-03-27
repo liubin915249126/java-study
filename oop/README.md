@@ -256,7 +256,7 @@ super(); // 没有无参时要显示调用super(name,age);
    }
 ```
 ### 多态
-对象具有多种形态
+对象具有多种形态(核心是方法的覆写)
 ```java
    // 引用的多态
    Animal obj1 = new Animal();
@@ -270,21 +270,30 @@ super(); // 没有无参时要显示调用super(name,age);
     向上类型转换(隐式/自动类型转换)
     向下类型转换(强制类型转换)
     Dog dog = new Dog();
-    Animal animal = dog; // 向上
-    Dog dog2 = (Dog)animal; // 向下，强制类型转换
+    Animal animal = dog; // 向上（子类变为父类）animal只能调用Animal中的方法（操作参数为父类，传入为子类）
+     
+    Dog dog2 = (Dog)animal; // 向下，强制类型转换（子类扩充）
     Cat cat = (Cat)animal; // 编译时 Cat类型，运行时 Dog类型 
-    
+    // 没有关系的对象不能进行向下转型
     if(animal instanceof Cat){  //instanceof //某个引用是否是某个类型或其子类
        Cat cat = (Cat)animal;
     }else{
 
     }
+    
 ```
 #### java 抽象类
 abstract //修饰符
+普通了增加了抽象方法（只声明没实现）（没有方法体{}）
+```java
+   所有的抽象类必须有子类
+   不是抽象类的子类必须重写抽象类中的所有抽象方法
+   抽象类的对象可以通过对象多态，利用子类实例化
+```
+
 
 #### java 中的接口
-规范，约束 类
+规范，约束 子类
 ```java
    public abstract interface IPlayGame{
     public abstract void playGame();
