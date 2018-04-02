@@ -267,12 +267,12 @@ super(); // 没有无参时要显示调用super(name,age);
 ```
 #### 引用类型转换
 ```java
-    向上类型转换(隐式/自动类型转换)
-    向下类型转换(强制类型转换)
+    向上类型转换(隐式/自动类型转换)(new 子类复写父类方法)
+    向下类型转换(强制类型转换)( )
     Dog dog = new Dog();
     Animal animal = dog; // 向上（子类变为父类）animal只能调用Animal中的方法（操作参数为父类，传入为子类）
-     
-    Dog dog2 = (Dog)animal; // 向下，强制类型转换（子类扩充）
+    // 先进行向上转换再向下转换 
+    Dog dog2 = (Dog)animal; // 向下，强制类型转换（需要使用子类扩充方法）
     Cat cat = (Cat)animal; // 编译时 Cat类型，运行时 Dog类型 
     // 没有关系的对象不能进行向下转型
     if(animal instanceof Cat){  //instanceof //某个引用是否是某个类型或其子类
@@ -284,29 +284,44 @@ super(); // 没有无参时要显示调用super(name,age);
 ```
 #### java 抽象类
 abstract //修饰符
-普通了增加了抽象方法（只声明没实现）（没有方法体{}）
+普通类增加了抽象方法（只声明没实现）（没有方法体{}）
 ```java
    所有的抽象类必须有子类
-   不是抽象类的子类必须重写抽象类中的所有抽象方法
-   抽象类的对象可以通过对象多态，利用子类实例化
+   不是抽象类的子类必须重写抽象类中的所有抽象方法(方法复写的权限 public)
+   抽象类的对象可以通过对象多态，利用子类为其实例化
 ```
+static // 不受实例化对象控制
+
+```java
+   // 如果父类没有无参构造方法，子类要指明父类的有参构造方法super(name,age)；
+   // 构造方法还没执行所有属性都是对应数据类型的初始值
+   // 抽象类可以没有任何抽象方法，但依然不能实例化
+```
+内部抽象类可以使用static定义，描述为外部抽象类
 
 
 #### java 中的接口
-规范，约束 子类
+规范，约束 子类,多继承
+全局常量与抽象方法的集合
 ```java
-   public abstract interface IPlayGame{
+   public interface IPlayGame{
+    public static final String message="123"; //常量
     public abstract void playGame();
    }
-   public class SmartPhone extends Telphone implements IPlayGame{
-    @Override
+   public class SmartPhone extends Telphone implements IPlayGame,INews{
+    @Override // 不是抽象类的子类必须重写接口的抽象方法
     public void playGame(){
-        
+        System.out.println(IPlayGame.message)
     };
    }
+   // 通过子类实例化接口
    IPlayGame ip1 = new SmartPhone();
+   ip1.playGame() // 调用被子类复写的方法
+   INews ip11 = (INews) ip1; //同一个子对象的两个父接口相互转换
    IPlayGame ip2 = new Psp();
 ```
+接口属性方法限制 使用public定义
+
 #### UML 简介
 统一建模语言
 powerDedsign    
