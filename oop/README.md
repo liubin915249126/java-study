@@ -321,7 +321,7 @@ static // 不受实例化对象控制
    IPlayGame ip2 = new Psp();
 ```
 接口属性方法限制 使用public定义
-
+static 修饰的内部的接口相当于外部接口
 #### UML 简介
 统一建模语言
 powerDedsign    
