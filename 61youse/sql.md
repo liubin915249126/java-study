@@ -1,0 +1,2 @@
+List<com.bybit.fop.dal.jooq.fundingrate.tables.pojos.FopFundingRate> fopFundingRates = FopFundingRateDao.ctx().selectFrom(FOP_FUNDING_RATE).where(FundingRateParamEnum.released.equals(status)  ? FOP_FUNDING_RATE.STATUS
+                .eq(status.name()) : DSL.noCondition()).fetch(FopFundingRateDao.mapper());
