@@ -13,6 +13,7 @@ Java Dependency Viewer
 
 #### 数据库
 Navicate
+DBeaver
 
 #### SQL
 JOOQ
