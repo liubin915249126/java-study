@@ -1,7 +1,7 @@
 =\=\=\=\=\=\=
 <<<<<<<=HEAD
 >>>>>>>=7098f7d (add test)
-arguments=--init-script /var/folders/sp/_pngv_c15tl5zfq1qlxpj9_80000gn/T/init3265188466091888354.gradle --init-script /var/folders/sp/_pngv_c15tl5zfq1qlxpj9_80000gn/T/init4795354434459320158.gradle
+arguments=--init-script /var/folders/sp/_pngv_c15tl5zfq1qlxpj9_80000gn/T/init6470347110786998774.gradle --init-script /var/folders/sp/_pngv_c15tl5zfq1qlxpj9_80000gn/T/init6614861250874600785.gradle
 auto.sync=false
 build.scans.enabled=false
 connection.gradle.distribution=GRADLE_DISTRIBUTION(VERSION(7.4.2))
